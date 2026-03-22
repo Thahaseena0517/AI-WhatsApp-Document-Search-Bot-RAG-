@@ -3,8 +3,8 @@ const qrcode = require("qrcode-terminal");
 const fs = require("fs");
 const pdfParse = require("pdf-parse");
 const { GoogleGenerativeAI } = require("@google/generative-ai");
-
-const genAI = new GoogleGenerativeAI("AIzaSyBTTy3eQHtVVaTf7k3PQrcr_1OX6CyOjhM"); // add your API key
+require("dotenv").config();
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY); // add your API key
 
 require("./db");
 const Message = require("./models/message");
